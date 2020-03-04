@@ -90,6 +90,7 @@ function deploy() {
 
     case 4:
       header.style.overflow = "scroll";
+      header.style.overflowX = "hidden";
       header.innerHTML = randomN();
       pOne.textContent = pOneArr[3];
       pTwo.textContent = pTwoArr[1];
