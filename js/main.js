@@ -68,14 +68,17 @@ function randomN() {
 function deploy() {
   switch (state) {
     case 0:
+      pOne.classList.remove('pOneRevealed');
+      pTwo.classList.remove('pTwoRevealed');
+      pOne.textContent = '';
+      pTwo.textContent = '';
+      getReset.classList.remove('resetRevealed');
+      getReset.classList.add('d-none');
       getGoNext.textContent = 'Go!';
       header.textContent = headArr[0];
       header.classList.remove('header');
       getBtnDiv.classList.remove('d-none');
       getGoNext2.classList.add('d-none');
-      getReset.classList.add('d-none');
-      pOne.textContent = '';
-      pTwo.textContent = '';
       break;
 
     case 1:
@@ -111,9 +114,12 @@ function deploy() {
 
     case 5:
       header.style.overflow = "hidden";
-      header.innerHTML = yourSymbol;
-      pOne.textContent = '';
-      pTwo.textContent = pTwoArr[2];
+      header.innerHTML = '';
+      pOne.classList.add('pOneRevealed');
+      pTwo.classList.add('pTwoRevealed');
+      getReset.classList.add('resetRevealed');
+      pOne.textContent = 'Your Symbol Is';
+      pTwo.textContent = yourSymbol;
       goNextBtn2.classList.add('d-none');
 
       break;

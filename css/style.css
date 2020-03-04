@@ -11,3 +11,16 @@
 body {
   background-color: beige;
 }
+
+.pOneRevealed {
+  font-size: 30px;
+}
+
+.pTwoRevealed {
+  font-size: 180px;
+  margin-bottom: 20px;
+}
+
+.resetRevealed {
+  margin-bottom: 100px;
+}
