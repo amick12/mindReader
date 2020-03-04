@@ -33,7 +33,7 @@ let headArr = ['I can read your mind', 'Pick a number from 01-99', 'Add both dig
 
 let pOneArr = ['When you have your number click next!', 'Ex: 14 is 1 + 4 = 5', 'Ex: 14 - 5 = 9', 'Find your new number', 'Note the Symbol beside the number'];
 
-let pTtwoArr = ['click next to proceed', 'Note the symbol beside the number'];
+let pTwoArr = ['click next to proceed', 'Note the symbol beside the number', 'YOUR SYMBOL'];
 
 
 
@@ -64,6 +64,7 @@ function randomN() {
 function deploy() {
   switch (state) {
     case 0:
+      goNextBtn.textContent = 'Go!';
       header.textContent = headArr[0];
       resetBtn.classList.add('d-none');
       break;
@@ -72,7 +73,7 @@ function deploy() {
       resetBtn.classList.remove('d-none');
       resetBtn.textContent = 'Reset';
       header.textContent = headArr[1];
-      pOne.textContent = pOneArr[0];
+      pOne.textContent = '';
       pTwo.textContent = pTwoArr[0];
       goNextBtn.textContent = 'Next';
       break;
@@ -91,13 +92,15 @@ function deploy() {
       header.style.overflow = "scroll";
       header.innerHTML = randomN();
       pOne.textContent = pOneArr[3];
+      pTwo.textContent = pTwoArr[1];
       goNextBtn.textContent = 'Reveal';
       break;
 
     case 5:
       header.innerHTML = yourSymbol;
       pOne.textContent = pOneArr[3];
-      pTwo.textContent = pTwoArr[1];
+      pTwo.textContent = pTwoArr[2];
+      goNextBtn.classList.add('d-none');
       break;
 
     default:
