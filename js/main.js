@@ -112,9 +112,10 @@ function deploy() {
     case 5:
       header.style.overflow = "hidden";
       header.innerHTML = yourSymbol;
-      pOne.textContent = pOneArr[3];
+      pOne.textContent = '';
       pTwo.textContent = pTwoArr[2];
-      goNextBtn.classList.add('d-none');
+      goNextBtn2.classList.add('d-none');
+
       break;
 
     default:
