@@ -3,8 +3,11 @@ let state = 0;
 //get HTML elements by ID
 
 //buttons
-let getGoNext = document.getElementById('goNextBtn');
+let getGoNext = document.getElementById('goNextBtn1');
+let getGoNext2 = document.getElementById('goNextBtn2');
 let getReset = document.getElementById('resetBtn');
+let getBtnDiv = document.getElementById('btnDiv');
+
 
 //divs
 let header = document.getElementById('header');
@@ -13,6 +16,7 @@ let pTwo = document.getElementById('pTwo');
 
 //setup click events
 getGoNext.addEventListener('click', goNext);
+getGoNext2.addEventListener('click', goNext);
 getReset.addEventListener('click', reset);
 
 //state control functions
@@ -29,11 +33,11 @@ function reset() {
   deploy();
 }
 
-let headArr = ['I can read your mind', 'Pick a number from 01-99', 'Add both digits together to get a new number', 'Subtract you new number from the original number'];
+let headArr = ['I can read your mind', 'Pick a number from 01-99', 'Add both digits together to get a new number', 'Subtract your new number from the original number'];
 
 let pOneArr = ['When you have your number click next!', 'Ex: 14 is 1 + 4 = 5', 'Ex: 14 - 5 = 9', 'Find your new number', 'Note the Symbol beside the number'];
 
-let pTwoArr = ['click next to proceed', 'Note the symbol beside the number', 'YOUR SYMBOL'];
+let pTwoArr = ['Then click next to proceed', 'Note the symbol beside the number', 'YOUR SYMBOL'];
 
 
 
@@ -64,16 +68,24 @@ function randomN() {
 function deploy() {
   switch (state) {
     case 0:
-      goNextBtn.textContent = 'Go!';
+      getGoNext.textContent = 'Go!';
       header.textContent = headArr[0];
-      resetBtn.classList.add('d-none');
+      header.classList.remove('header');
+      getBtnDiv.classList.remove('d-none');
+      getGoNext2.classList.add('d-none');
+      getReset.classList.add('d-none');
+      pOne.textContent = '';
+      pTwo.textContent = '';
       break;
 
     case 1:
+      header.classList.add('header');
+      getGoNext2.classList.remove('d-none');
+      getGoNext2.textContent = 'Next'
       resetBtn.classList.remove('d-none');
+      getBtnDiv.classList.add('d-none');
       resetBtn.textContent = 'Reset';
-      header.textContent = headArr[1];
-      pOne.textContent = '';
+      header.textContent = headArr[1];;
       pTwo.textContent = pTwoArr[0];
       goNextBtn.textContent = 'Next';
       break;
@@ -94,10 +106,11 @@ function deploy() {
       header.innerHTML = randomN();
       pOne.textContent = pOneArr[3];
       pTwo.textContent = pTwoArr[1];
-      goNextBtn.textContent = 'Reveal';
+      goNextBtn2.textContent = 'Reveal';
       break;
 
     case 5:
+      header.style.overflow = "hidden";
       header.innerHTML = yourSymbol;
       pOne.textContent = pOneArr[3];
       pTwo.textContent = pTwoArr[2];

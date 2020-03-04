@@ -13,13 +13,15 @@
   <div class="container h-50 w-50">
     <div class="container d-flex h-75 mt-5 justify-content-center position-absolute w-25">
       <div class="h-100 row w-75">
-        <div id="contain" class="border border-dark col-md-4 float-none h-100 mt-5 mw-100 position-absolute shadow-lg w-100">
-          <h3 id="header" class="text-center text-white font-weight-bolder"></h3>
-          <br>
+        <div id="contain" class="d-flex flex-sm-column justify-content-center border border-dark col-md-4 float-none h-100 mt-5 mw-100 position-absolute shadow-lg w-100">
+          <h3 id="header" class="header text-center text-white font-weight-bolder"></h3>
+          <div id="btnDiv">
+            <button type="button" id="goNextBtn1" class="active btn btn-block btn-lg btn-success"></button>
+          </div>
           <p id="pOne" class="text-center text-white font-weight-bold"></p>
           <p id="pTwo" class="text-center text-white font-weight-bold"></p>
-          <button type="button" id="goNextBtn" class="active btn btn-block btn-lg btn-success"></button>
-          <button id="resetBtn" class="active btn btn-block btn-lg btn-warning" type="button">Reset</button>
+          <button type="button" id="goNextBtn2" class="d-none active btn btn-block btn-lg btn-success"></button>
+          <button id="resetBtn" class="active d-none btn btn-block btn-lg btn-warning" type="button">Reset</button>
         </div>
       </div>
     </div>
