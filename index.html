@@ -2,34 +2,49 @@
 <html lang="en">
 
 <head>
-  <title>mindReader</title>
+  <title>Title</title>
+  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="container h-50 w-50">
-    <div class="container d-flex h-75 mt-5 justify-content-center position-absolute w-25">
-      <div class="h-100 row w-75">
-        <div id="contain" class="d-flex flex-sm-column justify-content-center border border-dark col-md-4 float-none h-100 mt-5 mw-100 position-absolute shadow-lg w-100">
-          <h3 id="header" class="header text-center text-white font-weight-bolder"></h3>
-          <div id="btnDiv">
-            <button type="button" id="goNextBtn1" class="active btn btn-block btn-lg btn-success"></button>
+
+  <body class="bg-dark">
+    <div class="container contain">
+      <div class="row text-center">
+        <div class="col-sm-12 col-md-6 offset-md-3 my-5 text-center">
+          <p id="topP" class="text-light font-weight-bold"></p>
+          <p id="topP2" class="font-weight-bold text-warning"></p>
+          <h1 id="header1" class="text-primary"></h1>
+        </div>
+        <div class="col-sm-12 col-md-6 offset-md-3 mb-5 text-center">
+          <h1 id="header2" class="mb-5 text-primary"></h1>
+          <div>
+            <button type="button" id="goNextBtn" class="btn btn-block btn-success font-weight-bold shadow-lg mt-5">Go!</button>
           </div>
-          <p id="pOne" class="text-center text-white font-weight-bold"></p>
-          <p id="pTwo" class="text-center text-white font-weight-bold"></p>
-          <button type="button" id="goNextBtn2" class="d-none active btn btn-block btn-lg btn-success"></button>
-          <button id="resetBtn" class="active d-none btn btn-block btn-lg btn-warning" type="button">Reset</button>
+        </div>
+        <div id="div3" class="col-sm-12 col-md-6 offset-md-3 mt-5 text-center">
+          <p id="pOne" class="text-warning font-weight-bold"></p>
+          <p id="pTwo" class="text-light font-weight-bold"></p>
+          <div id="btnDiv" class="">
+            <button type="button" id="goNextBtn2" class="btn btn-block btn-success font-weight-bold mb-3 shadow-lg"></button>
+            <button type="button" id="resetBtn" class="btn btn-block btn-danger font-weight-bolder shadow-lg mb-5"></button>
+          </div>
+
         </div>
       </div>
     </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="./js/main.js"></script>
-</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
 
 </html>
