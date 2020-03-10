@@ -3,14 +3,18 @@ let state = 0;
 //get HTML elements by ID
 
 //buttons
-let getGoNext = document.getElementById('goNextBtn1');
+let getGoNext = document.getElementById('goNextBtn');
 let getGoNext2 = document.getElementById('goNextBtn2');
 let getReset = document.getElementById('resetBtn');
 let getBtnDiv = document.getElementById('btnDiv');
+let getDiv3 = document.getElementById('div3')
 
 
 //divs
 let header = document.getElementById('header');
+let header2 = document.getElementById('header2');
+let topPone = document.getElementById('topP');
+let topPtwo = document.getElementById('topP2');
 let pOne = document.getElementById('pOne');
 let pTwo = document.getElementById('pTwo');
 
@@ -35,7 +39,7 @@ function reset() {
 
 let headArr = ['I can read your mind', 'Pick a number from 01-99', 'Add both digits together to get a new number', 'Subtract your new number from the original number'];
 
-let pOneArr = ['When you have your number click next!', 'Ex: 14 is 1 + 4 = 5', 'Ex: 14 - 5 = 9', 'Find your new number', 'Note the Symbol beside the number'];
+let pOneArr = ['When you have your number click next!', 'Ex: 14 is 1 + 4 = 5', 'Ex: 14 - 5 = 9', 'Find your new number'];
 
 let pTwoArr = ['Then click next to proceed', 'Note the symbol beside the number', 'YOUR SYMBOL'];
 
@@ -68,59 +72,63 @@ function randomN() {
 function deploy() {
   switch (state) {
     case 0:
-      pOne.classList.remove('pOneRevealed');
-      pTwo.classList.remove('pTwoRevealed');
+      topPone.textContent = '';
+      topPtwo.textContent = '';
+      header2.classList.remove('text-success')
+      header2.classList.remove('d-none');
+      getGoNext.classList.remove('d-none');
+      header2.textContent = headArr[0];
       pOne.textContent = '';
       pTwo.textContent = '';
-      getReset.classList.remove('resetRevealed');
-      getReset.classList.add('d-none');
+      getBtnDiv.classList.add('d-none');
       getGoNext.textContent = 'Go!';
-      header.textContent = headArr[0];
-      header.classList.remove('header');
-      getBtnDiv.classList.remove('d-none');
-      getGoNext2.classList.add('d-none');
+      header1.textContent = '';
+      getDiv3.classList.add('mt-5');
       break;
 
     case 1:
-      header.classList.add('header');
-      getGoNext2.classList.remove('d-none');
-      getGoNext2.textContent = 'Next'
-      resetBtn.classList.remove('d-none');
-      getBtnDiv.classList.add('d-none');
+      header2.classList.add('d-none');
+      getGoNext.classList.add('d-none');
+      getBtnDiv.classList.remove('d-none');
       resetBtn.textContent = 'Reset';
-      header.textContent = headArr[1];;
+      header1.textContent = headArr[1];;
       pTwo.textContent = pTwoArr[0];
-      goNextBtn.textContent = 'Next';
+      getGoNext2.classList.remove('d-none');
+      getGoNext2.textContent = 'Next';
       break;
+
     case 2:
-      header.textContent = headArr[2];
+      header1.textContent = headArr[2];
       pOne.textContent = pOneArr[1];
       pTwo.textContent = pTwoArr[0];
       break;
     case 3:
-      header.textContent = headArr[3];
+      header1.textContent = headArr[3];
       pOne.textContent = pOneArr[2];
       pTwo.textContent = pTwoArr[0];
       break;
 
     case 4:
-      header.style.overflow = "scroll";
-      header.style.overflowX = "hidden";
-      header.innerHTML = randomN();
-      pOne.textContent = pOneArr[3];
-      pTwo.textContent = pTwoArr[1];
+      header1.style.overflow = "scroll";
+      header1.style.overflowX = "hidden";
+      header1.innerHTML = randomN();
+      topPone.textContent = pOneArr[3];
+      topPtwo.textContent = pTwoArr[1];
       goNextBtn2.textContent = 'Reveal';
+      pOne.textContent = '';
+      pTwo.textContent = '';
       break;
 
     case 5:
-      header.style.overflow = "hidden";
-      header.innerHTML = '';
-      pOne.classList.add('pOneRevealed');
-      pTwo.classList.add('pTwoRevealed');
-      getReset.classList.add('resetRevealed');
-      pOne.textContent = 'Your Symbol Is';
-      pTwo.textContent = yourSymbol;
-      goNextBtn2.classList.add('d-none');
+      topPone.textContent = '';
+      topPtwo.textContent = '';
+      header1.style.overflow = "hidden";
+      header2.classList.remove('d-none', 'mb-5');
+      getDiv3.classList.remove('mt-5');
+      header1.textContent = 'Your Symbol Is';
+      header2.classList.add('text-success')
+      header2.textContent = yourSymbol;
+      getGoNext2.classList.add('d-none');
 
       break;
 
